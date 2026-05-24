@@ -44,7 +44,7 @@ export default function Hero() {
             </svg>
           </button>
           <a
-            href="mailto:aditya@example.com"
+            href="mailto:adityasbadgujar03@gmail.com"
             className="btn-secondary"
           >
             Get In Touch
