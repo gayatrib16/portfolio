@@ -391,7 +391,7 @@ export default function ProjectDetail({ project, onBack, onNavigate, projects })
               ))}
             </section>
 
-            {sections.map(({ key, label }) => {
+            {/* {sections.map(({ key, label }) => {
               const text = project[key];
               const sectionImages = project[`${key}Images`];
               const hasText = text && text.trim().length > 0;
@@ -412,7 +412,56 @@ export default function ProjectDetail({ project, onBack, onNavigate, projects })
                   )}
                 </section>
               );
-            })}
+            })} */}
+            {sections.map(({ key, label }) => {
+  const content = project[key];
+  const sectionImages = project[`${key}Images`];
+  const hasContent = content && (typeof content === 'string' ? content.trim().length > 0 : content.length > 0);
+  const hasImgs = sectionImages && sectionImages.length > 0;
+
+  // Neither text nor images — skip
+  if (!hasContent && !hasImgs) return null;
+
+  // ARRAY format: [{text: "...", images: [img1]}, {text: "...", images: [img2]}]
+  if (Array.isArray(content)) {
+    return (
+      <section className="detail-section" key={key}>
+        <h2 className="detail-section-title">{label}</h2>
+        {content.map((block, i) => (
+          <div key={i} className="detail-block">
+            {block.text && block.text.split("\n\n").map((para, j) => (
+              <p key={j} className="detail-para">{para}</p>
+            ))}
+            {block.images && block.images.length > 0 && (
+              <ImageGallery
+                images={block.images}
+                title={label}
+                onLightbox={(img) => openLightbox(img, block.images)}
+              />
+            )}
+          </div>
+        ))}
+      </section>
+    );
+  }
+
+  // STRING format (existing behavior — unchanged)
+  return (
+    <section className="detail-section" key={key}>
+      <h2 className="detail-section-title">{label}</h2>
+      {content && content.split("\n\n").map((para, i) => (
+        <p key={i} className="detail-para">{para}</p>
+      ))}
+      {hasImgs && (
+        <ImageGallery
+          images={sectionImages}
+          title={label}
+          onLightbox={(img) => openLightbox(img, sectionImages)}
+        />
+      )}
+    </section>
+  );
+})}
 
             {project.images && project.images.length > 0 && (
               <section className="detail-section">

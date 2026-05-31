@@ -1246,3 +1246,5 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   .detail-gallery-multi,
   .gallery-grid-multi { grid-template-columns: 1fr; }
 }
+.detail-block { margin-bottom: 1.5rem; }
+.detail-block:last-child { margin-bottom: 0; }

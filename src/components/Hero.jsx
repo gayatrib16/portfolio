@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import profilePhoto from '../assets/profile.jpeg'
+import profilePhoto from '../assets/profile2.png'
 
 export default function Hero() {
   const [visible, setVisible] = useState(false);

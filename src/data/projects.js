@@ -464,19 +464,34 @@ c. The model addresses the need for a non-invasive method capable of detecting s
 
   // approach: `Explain the strategy or solution direction taken.`,
 
-  methodology: `A multi-faceted engineering approach was used to analyze the biomechanics of the implant system:
+//   methodology: `A multi-faceted engineering approach was used to analyze the biomechanics of the implant system:
 
-Simulation: A MATLAB Simulink model of a spring-mass-damper system was developed to simulate the implant's vibratory dynamics and predict its resonance frequency.
+// Simulation: A MATLAB Simulink model of a spring-mass-damper system was developed to simulate the implant's vibratory dynamics and predict its resonance frequency.
 
-CAD and FEA: 3D models of the implant, abutment, and a dual-density artificial bone block were created in Fusion 360. Modal analysis was then performed using Hypermesh to determine the natural frequencies and mode shapes of the assembly.
+// CAD and FEA: 3D models of the implant, abutment, and a dual-density artificial bone block were created in Fusion 360. Modal analysis was then performed using Hypermesh to determine the natural frequencies and mode shapes of the assembly.
 
-Experimentation: A physical test rig was constructed using piezoelectric transducers to excite a dental implant in an artificial bone block made of dental plaster, simulating the hardening of bone over time.`,
-// meth has images
-methodologyImages:[p11m1,p11m2,p11m3, p11m4, p11m5,p11m6, p11m7, p11m8,p11m9],
+// Experimentation: A physical test rig was constructed using piezoelectric transducers to excite a dental implant in an artificial bone block made of dental plaster, simulating the hardening of bone over time.`,
+// // meth has images
+// methodologyImages:[p11m1,p11m2,p11m3, p11m4, p11m5,p11m6, p11m7, p11m8,p11m9],
 // methodology: `CAD and FEA: 3D models of the implant, abutment, and a dual-density artificial bone block were created in Fusion 360. Modal analysis was then performed using Hypermesh to determine the natural frequencies and mode shapes of the assembly.`,
 // methodologyImages:[p11m3, p11m4, p11m5],
 // methodology: `Experimentation: A physical test rig was constructed using piezoelectric transducers to excite a dental implant in an artificial bone block made of dental plaster, simulating the hardening of bone over time.`,
 // methodologyImages: [p11m6, p11m7, p11m8,p11m9],  
+methodology: [
+  {
+    text: `Simulation: A MATLAB Simulink model of a spring-mass-damper system was developed to simulate the implant's vibratory dynamics and predict its resonance frequency.`,
+    images: [p11m1, p11m2],
+  },
+  {
+    text: `CAD and FEA: 3D models of the implant, abutment, and a dual-density artificial bone block were created in Fusion 360. Modal analysis was then performed using Hypermesh to determine the natural frequencies and mode shapes of the assembly.`,
+    images: [p11m3, p11m4, p11m5],
+  },
+  {
+    text: `Experimentation: A physical test rig was constructed using piezoelectric transducers to excite a dental implant in an artificial bone block made of dental plaster, simulating the hardening of bone over time.`,
+    images: [p11m6, p11m7, p11m8, p11m9],
+  },
+],
+// remove methodologyImages — not needed when using array format
 validation: `The study successfully demonstrated a strong, direct linear relationship between the physically measured resonance frequency and the clinical ISQ value.
 
 Statistical Validation: Linear regression analysis of the experimental data yielded an R-squared value of 97.2%, confirming the high accuracy of the correlation.

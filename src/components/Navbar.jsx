@@ -24,7 +24,7 @@ export default function Navbar({ scrollY, onNavigate }) {
           <button onClick={() => scrollToSection("work")}>My Work</button>
           <button onClick={() => scrollToSection("contact")}>Contact</button>
           <a
-            href="https://linkedin.com/in/aditya-badgujar"
+            href="http://linkedin.com/in/adityasb03"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
